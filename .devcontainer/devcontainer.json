@@ -1,0 +1,19 @@
+{
+	"name": "z80asm-dev-environment",
+	"image": "dgzornoza/z80asm-dev:latest",	
+	"runArgs": [
+		"--name=${localWorkspaceFolderBasename}"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [				
+				"maziac.dezog",
+				"maziac.asm-code-lens",
+				"maziac.hex-hover-converter",
+				"maziac.sna-fileviewer",
+				"maziac.z80-instruction-set",				
+				"theNestruo.z80-asm-meter"
+			]
+		}
+	}
+}

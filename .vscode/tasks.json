@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"options": {
+		"env": {
+			"OUTPUT_NAME": "ZX-Pong" // Set output file name
+		}
+	},
+	"tasks": [
+		{
+			"label": "Compile PASMO",
+			"type": "shell",
+			"command": "./compile_pasmo.sh ${OUTPUT_NAME}",
+			"problemMatcher": [],
+			"detail": "Compile project",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "rm build/*",
+			"problemMatcher": [],
+			"detail": "Clean output files"
+		}
+	]
+}
