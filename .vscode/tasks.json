@@ -1,17 +1,38 @@
 {
 	"version": "2.0.0",
-	"options": {
-		"env": {
-			"OUTPUT_NAME": "ZX-Pong" // Set output file name
-		}
-	},
 	"tasks": [
 		{
 			"label": "Compile PASMO",
 			"type": "shell",
-			"command": "./compile_pasmo.sh ${OUTPUT_NAME}",
+			"command": "./build_pasmo.sh main-output",
 			"problemMatcher": [],
 			"detail": "Compile project",
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
+			"label": "Compile SJASMPLUS",
+			"type": "shell",
+			"command": "sjasmplus",
+			"args": [
+				"--sld=build/output.sld",
+				"--fullpath",
+				"--inc=src",
+				"sjasmplus.asm"
+			],
+			"problemMatcher": {
+				"owner": "sjasmplus",
+				"fileLocation": "autoDetect",
+				"pattern": {
+					"regexp": "^(.*)\\((\\d+)\\):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"severity": 3,
+					"message": 4
+				}
+			},
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -23,6 +44,6 @@
 			"command": "rm build/*",
 			"problemMatcher": [],
 			"detail": "Clean output files"
-		}
+		},
 	]
 }

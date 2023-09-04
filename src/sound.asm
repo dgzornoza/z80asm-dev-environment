@@ -32,46 +32,46 @@ BEEPER: EQU $03B5
 ; -------------------------------------------------------------------
 PlaySound:
 ; Preserves the value of records
-push de
-push hl
+    push de
+    push hl
 
-cp   $01                   ; Evaluates sound dot
-jr   z, playSound_point    ; Sound point? Jump
+    cp   $01                   ; Evaluates sound dot
+    jr   z, playSound_point    ; Sound point? Jump
 
-cp   $02                   ; Evaluates sound shovel
-jr   z, playSound_paddle   ; Sound paddle? Jump
+    cp   $02                   ; Evaluates sound shovel
+    jr   z, playSound_paddle   ; Sound paddle? Jump
 
-; The edge sound is emitted
-ld   hl, C_5               ; HL = note
-ld   de, C_5_FQ            ; DE = duration (frequency)
-jr   beep                  ; Jumps to beep
+    ; The edge sound is emitted
+    ld   hl, C_5               ; HL = note
+    ld   de, C_5_FQ            ; DE = duration (frequency)
+    jr   beep                  ; Jumps to beep
 
 ; The sound of Dot is emitted
 playSound_point:
-ld   hl, C_3               ; HL = note
-ld   de, C_3_FQ            ; DE = duration (frequency)
-jr   beep                  ; Jumps to beep
+    ld   hl, C_3               ; HL = note
+    ld   de, C_3_FQ            ; DE = duration (frequency)
+    jr   beep                  ; Jumps to beep
 
 ; The paddle sound is emitted
 playSound_paddle:
-ld   hl, C_4               ; HL = note
-ld   de, C_4_FQ            ; DE = duration (frequency)
+    ld   hl, C_4               ; HL = note
+    ld   de, C_4_FQ            ; DE = duration (frequency)
 
 ; Sounds the note
 beep:
-; Preserves registers; ROM BEEPER routine alters them.
-push af
-push bc
-push ix
+    ; Preserves registers; ROM BEEPER routine alters them.
+    push af
+    push bc
+    push ix
 
-call BEEPER                ; Call BEEPER from ROM
+    call BEEPER                ; Call BEEPER from ROM
 
-; Retrieves the value of the registers
-pop  ix
-pop  bc
-pop  af
+    ; Retrieves the value of the registers
+    pop  ix
+    pop  bc
+    pop  af
 
-pop  hl
-pop  de
+    pop  hl
+    pop  de
 
-ret
+    ret

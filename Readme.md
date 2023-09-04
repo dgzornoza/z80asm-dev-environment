@@ -42,6 +42,8 @@ Souce sample is from: https://www.z88dk.org/wiki/doku.php?id=temp:front#mixing_c
 - mixing C and ASM https://www.z88dk.org/wiki/doku.php?id=temp:front#mixing_c_and_assembly_language
 - CRTs reference https://github.com/z88dk/z88dk/blob/master/doc/ZXSpectrumZSDCCnewlib_02_HelloWorld.md
 
+- sample program: https://github.com/maziac/z80-sample-program
+
 ## Releases
 
 ### 2.2.0

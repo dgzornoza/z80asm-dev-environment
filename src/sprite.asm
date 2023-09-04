@@ -17,16 +17,16 @@ PADDLE_TOP:    EQU $02     ; TTLLLLLSSSSS
 ; Ball sprite:
 ;     1 line at 0, 4 lines 3c, 1 line at 0
 ballRight:     ;  Right        Sprite         Left
-db $3c, $00    ; +0/$00 00111100    00000000 -8/$f8
-db $1e, $00    ; +1/$01 00011110    00000000 -7/$f9
-db $0f, $00    ; +2/$02 00001111    00000000 -6/$fa
-db $07, $80    ; +3/$03 00000111    10000000 -5/$fb
-db $03, $c0    ; +4/$04 00000011    11000000 -4/$fc
-db $01, $e0    ; +5/$05 00000001    11100000 -3/$fd
-db $00, $f0    ; +6/$06 00000000    11110000 -2/$fe
-db $00, $78    ; +7/$07 00000000    01111000 -1/$ff
+    db $3c, $00    ; +0/$00 00111100    00000000 -8/$f8
+    db $1e, $00    ; +1/$01 00011110    00000000 -7/$f9
+    db $0f, $00    ; +2/$02 00001111    00000000 -6/$fa
+    db $07, $80    ; +3/$03 00000111    10000000 -5/$fb
+    db $03, $c0    ; +4/$04 00000011    11000000 -4/$fc
+    db $01, $e0    ; +5/$05 00000001    11100000 -3/$fd
+    db $00, $f0    ; +6/$06 00000000    11110000 -2/$fe
+    db $00, $78    ; +7/$07 00000000    01111000 -1/$ff
 ballLeft:
-db $00, $3c    ; +8/$08 00000000    00111100 +0/$00
+    db $00, $3c    ; +8/$08 00000000    00111100 +0/$00
 
 ; Ball position
 BALLPOS_INI:  EQU $4850
@@ -62,92 +62,92 @@ POINTS_X2_R:   EQU $13
 POINTS_Y_B:    EQU $14
 
 White_sprite:
-ds $10	; 16 spaces = 16 bytes at $00
+    ds $10	; 16 spaces = 16 bytes at $00
 
 Zero_sprite:
-db $00, $7e, $7e, $66, $66, $66, $66, $66
-db $66, $66, $66, $66, $66, $7e, $7e, $00
+    db $00, $7e, $7e, $66, $66, $66, $66, $66
+    db $66, $66, $66, $66, $66, $7e, $7e, $00
 
 One_sprite:
-db $00, $18, $18, $18, $18, $18, $18, $18
-db $18, $18, $18, $18, $18, $18, $18, $00
+    db $00, $18, $18, $18, $18, $18, $18, $18
+    db $18, $18, $18, $18, $18, $18, $18, $00
 
 Two_sprite:
-db $00, $7e, $7e, $06, $06, $06, $06, $7e
-db $7e, $60, $60, $60, $60, $7e, $7e, $00
+    db $00, $7e, $7e, $06, $06, $06, $06, $7e
+    db $7e, $60, $60, $60, $60, $7e, $7e, $00
 
 Three_sprite:
-db $00, $7e, $7e, $06, $06, $06, $06, $3e
-db $3e, $06, $06, $06, $06, $7e, $7e, $00
+    db $00, $7e, $7e, $06, $06, $06, $06, $3e
+    db $3e, $06, $06, $06, $06, $7e, $7e, $00
 
 Four_sprite:
-db $00, $66, $66, $66, $66, $66, $66, $7e
-db $7e, $06, $06, $06, $06, $06, $06, $00
+    db $00, $66, $66, $66, $66, $66, $66, $7e
+    db $7e, $06, $06, $06, $06, $06, $06, $00
 
 Five_sprite:
-db $00, $7e, $7e, $60, $60, $60, $60, $7e
-db $7e, $06, $06, $06, $06, $7e, $7e, $00
+    db $00, $7e, $7e, $60, $60, $60, $60, $7e
+    db $7e, $06, $06, $06, $06, $7e, $7e, $00
 
 Six_sprite:
-db $00, $7e, $7e, $60, $60, $60, $60, $7e
-db $7e, $66, $66, $66, $66, $7e, $7e, $00
+    db $00, $7e, $7e, $60, $60, $60, $60, $7e
+    db $7e, $66, $66, $66, $66, $7e, $7e, $00
 
 Seven_sprite:
-db $00, $7e, $7e, $06, $06, $06, $06, $06
-db $06, $06, $06, $06, $06, $06, $06, $00
+    db $00, $7e, $7e, $06, $06, $06, $06, $06
+    db $06, $06, $06, $06, $06, $06, $06, $00
 
 Eight_sprite:
-db $00, $7e, $7e, $66, $66, $66, $66, $7e
-db $7e, $66, $66, $66, $66, $7e, $7e, $00
+    db $00, $7e, $7e, $66, $66, $66, $66, $7e
+    db $7e, $66, $66, $66, $66, $7e, $7e, $00
 
 Nine_sprite:
-db $00, $7e, $7e, $66, $66, $66, $66, $7e
-db $7e, $06, $06, $06, $06, $7e, $7e, $00
+    db $00, $7e, $7e, $66, $66, $66, $66, $7e
+    db $7e, $06, $06, $06, $06, $7e, $7e, $00
 
 Zero:
-dw White_sprite, Zero_sprite
+    dw White_sprite, Zero_sprite
 
 One:
-dw White_sprite, One_sprite
+    dw White_sprite, One_sprite
 
 Two:
-dw White_sprite, Two_sprite
+    dw White_sprite, Two_sprite
 
 Three:
-dw White_sprite, Three_sprite
+    dw White_sprite, Three_sprite
 
 Four:
-dw White_sprite, Four_sprite
+    dw White_sprite, Four_sprite
 
 Five:
-dw White_sprite, Five_sprite
+    dw White_sprite, Five_sprite
 
 Six:
-dw White_sprite, Six_sprite
+    dw White_sprite, Six_sprite
 
 Seven:
-dw White_sprite, Seven_sprite
+    dw White_sprite, Seven_sprite
 
 Eight:
-dw White_sprite, Eight_sprite
+    dw White_sprite, Eight_sprite
 
 Nine:
-dw White_sprite, Nine_sprite
+    dw White_sprite, Nine_sprite
 
 Ten:
-dw One_sprite, Zero_sprite
+    dw One_sprite, Zero_sprite
 
 Eleven:
-dw One_sprite, One_sprite
+    dw One_sprite, One_sprite
 
 Twelve:
-dw One_sprite, Two_sprite
+    dw One_sprite, Two_sprite
 
 Thirteen:
-dw One_sprite, Three_sprite
+    dw One_sprite, Three_sprite
 
 Fourteen:
-dw One_sprite, Four_sprite
+    dw One_sprite, Four_sprite
 
 Fifteen:
-dw One_sprite, Five_sprite
+    dw One_sprite, Five_sprite
