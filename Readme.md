@@ -42,6 +42,49 @@ Source code sample is from Juan Antonio Rubio García book 'Ensamblador para ZX 
 
 www: https://espamatica.com/
 
+### Sample TAP generator sjasmplus
+
+*(currenly not tested)*
+
+```asm
+    DEVICE ZXSPECTRUM48
+    INCLUDE BasicLib.asm
+
+start_basic
+    LINE : db clear : NUM 23980 : LEND
+    LINE : db load, '""' , screen : LEND
+    LINE : db load, '""', code : LEND
+    LINE : db load, '""', code : NUM 32768 : LEND
+    LINE : db rand, usr : NUM $5dad  : LEND
+end_basic
+
+    org $5dad
+start_code
+    INCBIN "main.bin"
+end_code
+
+    org 32768
+start_func
+    INCBIN "func.bin"
+end_func
+
+    org $4000
+start_screen
+    INCBIN "pantalla.scr"
+end_screen
+
+
+    DEFINE cinta "pin.tap"
+    EMPTYTAP cinta
+    ; cargador BASIC
+    SAVETAP cinta, BASIC, "juego", start_basic, end_basic-start_basic, 10
+    ;
+    SAVETAP cinta, CODE, "pantalla", start_screen, end_screen-start_screen
+    ; código máquina
+    SAVETAP cinta, CODE, "main", start_code, end_code-start_code
+    SAVETAP cinta, CODE, "funciones", start_func, end_func-start_func
+```
+*thanks to Pedro Picapiedra in Telegram group*
 
 ## Links of interest 
 
