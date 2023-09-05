@@ -75,10 +75,7 @@ loop_continue:
     jp   z, Main
     jp   Loop                   ; Infinite loop
 
-countLoopBall:   db $00    ; Count turns ball
-countLoopPaddle: db $00    ; Count turns paddles
-p1points:        db $00
-p2points:        db $00
+
 
 ;===========================================================================
 ; Include modules
@@ -89,3 +86,7 @@ p2points:        db $00
     include "sprite.asm"
     include "video.asm"
 
+countLoopBall:   db $00    ; Count turns ball
+countLoopPaddle: db $00    ; Count turns paddles
+p1points:        db $00
+p2points:        db $00

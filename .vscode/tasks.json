@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Compile PASMO",
+			"label": "Build with PASMO",
 			"type": "shell",
 			"command": "./build_pasmo.sh main-output",
 			"problemMatcher": [],
@@ -20,7 +20,7 @@
 				"--sld=build/output.sld",
 				"--fullpath",
 				"--inc=src",
-				"sjasmplus.asm"
+				"_sjasmplus.asm"
 			],
 			"problemMatcher": {
 				"owner": "sjasmplus",

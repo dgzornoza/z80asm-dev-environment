@@ -1,12 +1,14 @@
-# pasmo-dev-environment README
+# z80asm-dev-environment README
 
-z88dk Developer Container Environment for Visual Studio Code.
+z80asm Developer Container Environment for Visual Studio Code.
+Author: David González Zornoza
 
 ## Features
 
-Project to set up a development environment for zx spectrum with z88dk in a visual studio code dev-container.
+Project to set up a development environment for zx spectrum with sjasmplus/pasmo, in a visual studio code dev-container.
 
-Environment using DeZog for debugging ASM with C source code tags.
+Environment using DeZog for debugging ASM/sjasmplus with source code tags.
+Pasmo can not debug with DeZog, but you can use for build, on this sample is using PASMO for build end tap file with loader, screen and code.
 
 ## Requirements
 
@@ -23,31 +25,38 @@ Environment using DeZog for debugging ASM with C source code tags.
 - Press F1, then execute `Dev Containers: Reopen in container`
 - Wait for install container and recomended extensions
 - Execute build task Ctrl + Shift + B (Build)
-- Set break point in main.c.lis and press F5 to debug
 - All ready to develop your project
 
-https://github.com/dgzornoza/z88dk-dev-environment/assets/7240189/b688a008-af47-4b45-b31c-d45f6e889f59
+(optional for build tap file with loader + screen + code)
+- Press F1 and select 'Run Task' -> 'Build with PASMO'
+- use build/main-output.tap in any emulator
+
 
 ## Remarks
 
 Container name is created based in folder project name, you can create other folders based on this repository with other names for more projects.
-The first time it download docker hub image with the Z88DK sources from 2023-06-12.
+The first time it download docker hub image with the sjasmplus sources from 2023-009-05 and PASMO 0.5.5
 
-Souce sample is from: https://www.z88dk.org/wiki/doku.php?id=temp:front#mixing_c_and_assembly_language
+Souce sample is from Juan Antonio Rubio García book 'Ensamblador para ZX Spectrum: ¿Hacemos un juego?'
+www: https://espamatica.com/
+
 
 ## Links of interest 
 
-- z88dk: https://z88dk.org/site/
-- zx spectrum starter guide: https://github.com/z88dk/z88dk/blob/master/doc/ZXSpectrumZSDCCnewlib_01_GettingStarted.md
-- mixing C and ASM https://www.z88dk.org/wiki/doku.php?id=temp:front#mixing_c_and_assembly_language
-- CRTs reference https://github.com/z88dk/z88dk/blob/master/doc/ZXSpectrumZSDCCnewlib_02_HelloWorld.md
+- sjasmplus: https://github.com/z00m128/sjasmplus
+- sjasmplus-doc: https://z00m128.github.io/sjasmplus/documentation.html
+- PASMO-doc: https://pasmo.speccy.org/pasmodoc.html
+- SPECCY: https://www.speccy.org/
 
-- sample program: https://github.com/maziac/z80-sample-program
+- DeZog/sjasmplus sample program: https://github.com/maziac/z80-sample-program
+- ASM telegram group: https://t.me/EnsambladorZXSpectrum
+
+- My Github account: https://github.com/dgzornoza
 
 ## Releases
 
-### 2.2.0
+### 1.0.0
 
-Initial release aligned with z88dk v2.2
+Initial release PASMO 0.5.5, SJASMPLUS 1.20.3
 
 **Enjoy!**
