@@ -38,7 +38,7 @@ Pasmo can not debug with DeZog, but you can use for build, on this sample is usi
 Container name is created based in folder project name, you can create other folders based on this repository with other names for more projects.
 The first time it download docker hub image with the sjasmplus sources from 2023-009-05 and PASMO 0.5.5
 
-Souce sample is from Juan Antonio Rubio García book 'Ensamblador para ZX Spectrum: ¿Hacemos un juego?'
+Source sample is from Juan Antonio Rubio García book 'Ensamblador para ZX Spectrum: ¿Hacemos un juego?'
 www: https://espamatica.com/
 
 
